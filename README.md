@@ -7,7 +7,11 @@ An unofficial open source validator for the International Maritime Organisation 
 
 ## Getting Started
 
-The library can be installed via Nuget.
+The library can be installed via Nuget
+
+```bash
+dotnet add package EtiveMor.OpenImoRegistrationNumberValidator --version 1.0.0
+```
 
 # Available methods
 
