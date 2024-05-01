@@ -16,7 +16,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      working-directory: './'
+      working-directory: './EtiveMor.OpenImoRegistrationNumberValidator'
     steps:
     - uses: actions/checkout@v4
     
