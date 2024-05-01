@@ -29,7 +29,7 @@ namespace EtiveMor.OpenImoRegistrationNumberValidator.Tests
         [TestMethod]
         public void TestKnownValidCompanyImoNumberReturnsValid(string imoNumber)
         {
-            bool result = ImoNumberValidator.ValidateShippingCompanyRegistrationNumber(imoNumber);
+            bool result = ImoNumberValidator.ValidateCompanyRegistrationNumber(imoNumber);
 
             Assert.IsTrue(result);
         }
@@ -40,7 +40,7 @@ namespace EtiveMor.OpenImoRegistrationNumberValidator.Tests
         [TestMethod]
         public void TestKnownValidCompanyImoNumberReturnsSameResult(string imoNumber)
         {
-            bool resultValidate = ImoNumberValidator.ValidateShippingCompanyRegistrationNumber(imoNumber);
+            bool resultValidate = ImoNumberValidator.ValidateCompanyRegistrationNumber(imoNumber);
             bool resultIsValid = ImoNumberValidator.IsValidCompanyRegistrationNumber(imoNumber);
 
             Assert.AreEqual(resultValidate, resultIsValid);
@@ -139,7 +139,7 @@ namespace EtiveMor.OpenImoRegistrationNumberValidator.Tests
         {
             try
             {
-                bool result = ImoNumberValidator.ValidateShippingCompanyRegistrationNumber(imoNumber);
+                bool result = ImoNumberValidator.ValidateCompanyRegistrationNumber(imoNumber);
             }
             catch (ImoNumberValidationException ex)
             {
@@ -193,7 +193,7 @@ namespace EtiveMor.OpenImoRegistrationNumberValidator.Tests
         {
             try
             {
-                bool result = ImoNumberValidator.ValidateShippingCompanyRegistrationNumber(imoNumber);
+                bool result = ImoNumberValidator.ValidateCompanyRegistrationNumber(imoNumber);
             }
             catch (ImoNumberValidationException ex)
             {

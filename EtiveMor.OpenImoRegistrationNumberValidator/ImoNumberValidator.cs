@@ -113,13 +113,13 @@
         /// returns a false, otherwise returns true.
         /// 
         /// This method will not throw any exceptions. To get the reason of the invalidity
-        /// call the method <see cref="ValidateShippingCompanyRegistrationNumber(string)"/> directly
+        /// call the method <see cref="ValidateCompanyRegistrationNumber(string)"/> directly
         /// </summary>
         /// <param name="imoNumber">A company's IMO number</param>
         /// <returns>true or false, indicating if the IMO number was valid</returns>
         public static bool IsValidCompanyRegistrationNumber(string imoNumber)
         {
-            try { ValidateShippingCompanyRegistrationNumber(imoNumber); return true; }
+            try { ValidateCompanyRegistrationNumber(imoNumber); return true; }
             catch { return false; }
         }
 
@@ -130,7 +130,7 @@
         /// <param name="imoNumber">A company's IMO number</param>
         /// <returns></returns>
         /// <exception cref="ImoNumberValidationException"></exception>
-        public static bool ValidateShippingCompanyRegistrationNumber(string imoNumber)
+        public static bool ValidateCompanyRegistrationNumber(string imoNumber)
         {
             // These numbers are defined by the IMO. The first digit in the imo number is 
             // multipl by 8, the second by 6, the third by 4, the fourth by 2, the fifth by 9, and the sixth by 7

@@ -1,0 +1,38 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET Build & Test
+
+on:
+  push:
+    branches: [ "main", "stage", "develop" ]
+    paths-ignore: ["*.md"] # don't build on markdown file changes
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore: ["*.md"] # don't build on markdown file changes
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env: 
+      working-directory: './'
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      working-directory: ${{env.working-directory}}
+      run: dotnet restore
+    
+    - name: Build
+      working-directory: ${{env.working-directory}}
+      run: dotnet build --no-restore
+    
+    - name: Test
+      working-directory: ${{env.working-directory}}
+      run: dotnet test --no-build --verbosity normal
